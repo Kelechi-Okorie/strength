@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength</title>
+    <script src="./includes/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./includes/bootstrap/css/bootstrap.min.css">
+
+    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="result-container" class="p-3 pt-5 d-flex justify-content-center">
+        <div id="result-inner">
+            <ul id="result-list" class="list-group mb-3">
+            </ul>
+
+            <div class="d-flex justify-content-end">
+                <button type="button" id="reset" class="btn btn-info">Info</button>
+            </div>
+        </div>
+    </div>
+
+    <template id="result-template">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            W/C
+            <span class="badge text-bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            S/C
+            <span class="badge text-bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            G/C
+            <span class="badge text-bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            A/C
+            <span class="badge text-bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            28 day strength
+            <span class="badge text-bg-primary rounded-pill"></span>
+        </li>
+    </template>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="select" class="">
+                        <h6 style="margin-bottom: 20px;">What do you want to do</h6>
+                        <button id="mix-ratio-btn" type="button" class="btn btn-outline-primary">Calculate mix
+                            ratio given desired 7 days
+                            strength</button>
+
+                        <p>or</p>
+                        <button id="strength-btn" type="button" class="btn btn-outline-primary">Calculate 7 days
+                            strength given mixed
+                            ratio</button>
+                    </div>
+
+                    <div id="calc-mix-ratio" class="d-none">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">What is 28 day strength</label>
+                            <input type="email" class="form-control" id="28daystrength" aria-describedby="emailHelp">
+                        </div>
+                    </div>
+
+                    <div id="calc-strength" class="d-none">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Enter the following values</label>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">W/C</span>
+                                <input type="number" class="form-control" id="wc" aria-label="wc">
+                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text">-</span>
+                                <span class="input-group-text">.00</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">S/C</span>
+                                <input type="number" class="form-control" id="sc" aria-label="sc">
+                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text">-</span>
+                                <span class="input-group-text">.00</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">G/C</span>
+                                <input type="number" class="form-control" id="gc" aria-label="gc">
+                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text">-</span>
+                                <span class="input-group-text">.00</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">A/C</span>
+                                <input type="number" class="form-control" id="ac" aria-label="ac">
+                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text">-</span>
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="backBtn" type="button" class="btn btn-secondary">Back</button>
+                    <button id="calcBtn" type="button" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
